@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Attendance Management System — Days 1–10
 
 A small Spring Boot project for learning Java, MySQL, JPA relationships and REST CRUD. The webpage is plain HTML, CSS and JavaScript.
@@ -344,3 +345,7 @@ Existing database rows are not rewritten automatically by validation. If an olde
 3. If valid, `StudentController` passes the request to `StudentService`.
 4. The service saves or updates the `Student` entity and maps it to `StudentResponse`.
 5. Spring converts that response record to JSON for the browser.
+=======
+# EduTrack
+This is an Attendance Management System made using core concepts of Spring
+>>>>>>> e7fe252943432654d6d267dd7d5a4caa0a63abad
