@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"error-container":"#ffdad6","on-tertiary-fixed":"#001e2c","on-secondary-fixed":"#00174b","on-tertiary":"#ffffff","on-primary-fixed-variant":"#264191","outline-variant":"#c5c5d3","background":"#faf8ff","surface":"#faf8ff","on-secondary-fixed-variant":"#003ea8","on-primary-container":"#90a8ff","on-tertiary-container":"#2eb7f2","primary":"#00236f","on-surface":"#131b2e","on-tertiary-fixed-variant":"#004c69","tertiary-fixed-dim":"#7bd0ff","surface-container":"#eaedff","inverse-on-surface":"#eef0ff","primary-fixed-dim":"#b6c4ff","on-secondary-container":"#fefcff","inverse-surface":"#283044","secondary-fixed-dim":"#b4c5ff","primary-container":"#1e3a8a","secondary":"#0051d5","tertiary-fixed":"#c4e7ff","on-background":"#131b2e","inverse-primary":"#b6c4ff","error":"#ba1a1a","surface-bright":"#faf8ff","surface-container-highest":"#dae2fd","on-surface-variant":"#444651","surface-dim":"#d2d9f4","on-error-container":"#93000a","on-primary-fixed":"#00164e","surface-container-high":"#e2e7ff","surface-container-low":"#f2f3ff","primary-fixed":"#dce1ff","on-error":"#ffffff","secondary-container":"#316bf3","on-secondary":"#ffffff","surface-container-lowest":"#ffffff","tertiary":"#002e41","tertiary-container":"#00455f","surface-tint":"#4059aa","on-primary":"#ffffff","outline":"#757682","secondary-fixed":"#dbe1ff","surface-variant":"#dae2fd"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"space-lg":"1.5rem","gutter-mobile":"0.75rem","space-md":"1rem","margin-mobile":"1rem","margin":"2rem","gutter":"1.5rem","space-xl":"2rem","space-xs":"0.25rem","space-sm":"0.5rem"},"fontFamily":{"headline-xl":["Plus Jakarta Sans"],"body-lg":["Inter"],"headline-lg-mobile":["Plus Jakarta Sans"],"body-sm":["Inter"],"data-mono":["Inter"],"label-sm":["Inter"],"headline-lg":["Plus Jakarta Sans"],"label-lg":["Inter"],"body-md":["Inter"],"headline-md":["Plus Jakarta Sans"],"label-md":["Inter"],"headline-xl-mobile":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"]},"fontSize":{"headline-xl":["36px",{"lineHeight":"44px","letterSpacing":"-0.02em","fontWeight":"700"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"headline-lg-mobile":["22px",{"lineHeight":"30px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-sm":["12px",{"lineHeight":"16px","fontWeight":"400"}],"data-mono":["13px",{"lineHeight":"18px","letterSpacing":"0.02em","fontWeight":"500"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"500"}],"headline-lg":["28px",{"lineHeight":"36px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-md":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","letterSpacing":"-0.01em","fontWeight":"700"}],"headline-sm":["16px",{"lineHeight":"24px","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col"><div class="h-16 px-space-md flex items-center gap-space-sm"><div class="w-9 h-9 rounded-lg bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[22px]">school</span></div><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-tight tracking-tight">EduTrack</span><span class="font-label-sm text-label-sm text-on-surface-variant">Attendance Cloud</span></div></div><div class="px-space-md py-space-sm"><div class="p-space-sm bg-surface-container rounded-lg flex flex-col gap-space-xs"><div class="flex items-center justify-between"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">System Status</span><span class="flex h-2 w-2 relative"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span></span></div><div class="flex items-center justify-between text-on-surface font-data-mono text-data-mono"><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-secondary">lock</span> JWT: Active</span><span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-secondary">dns</span> Spring 3.2</span></div></div></div><nav class="flex flex-col gap-1 px-space-md mt-space-xs" data-active-classes="bg-primary-container text-on-secondary-container font-semibold shadow-[0_1px_3px_0_rgba(15,23,42,0.05)]"><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="attendance-summary" href="#"><span class="material-symbols-outlined text-[20px]">fact_check</span><span class="font-label-lg text-label-lg">Attendance &amp; Summary</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="students-enrollment" href="#"><span class="material-symbols-outlined text-[20px]">groups</span><span class="font-label-lg text-label-lg">Students &amp; Enrollment</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="setup-classes-subjects" href="#"><span class="material-symbols-outlined text-[20px]">meeting_room</span><span class="font-label-lg text-label-lg">Setup Classes &amp; Subjects</span></a><a class="flex items-center gap-space-sm px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors" data-path="access-roles" href="#"><span class="material-symbols-outlined text-[20px]">admin_panel_settings</span><span class="font-label-lg text-label-lg">Access &amp; Roles</span></a></nav></div><div class="p-space-md flex flex-col gap-space-xs"><div class="p-space-sm rounded-lg bg-surface-container-high flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">cloud_done</span><span class="font-label-sm text-label-sm text-on-surface-variant">Sync Engine v2.4</span></div><span class="px-2 py-0.5 rounded-full bg-secondary/10 text-secondary font-label-sm text-label-sm font-semibold">Ready</span></div><span class="font-body-sm text-body-sm text-outline px-1">© 2024 EduTrack Systems Inc.</span></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs bg-surface-container px-space-md py-1.5 rounded-full"><span class="material-symbols-outlined text-secondary text-[18px]">calendar_month</span><span class="font-label-md text-label-md text-on-surface font-semibold">AY 2024-25 Fall Semester</span><span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-data-mono">JWT Bearer: Active</span></div><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-low"><span class="h-2 w-2 rounded-full bg-secondary"></span><span class="font-label-sm text-label-sm text-on-surface-variant font-data-mono">Spring Boot: Connected</span></div></div><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs"><button class="w-9 h-9 rounded-lg flex items-center justify-center hover:bg-surface-container transition-colors relative text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-error"></span></button><button class="w-9 h-9 rounded-lg flex items-center justify-center hover:bg-surface-container transition-colors text-on-surface-variant hover:text-on-surface" type="button"><span class="material-symbols-outlined text-[20px]">help_outline</span></button></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-semibold">Arthur Pendelton</span><span class="font-label-sm text-label-sm text-secondary font-bold tracking-wider">SUPER_ADMIN</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="relative w-full pt-16 bg-surface px-space-lg py-space-lg"><div class="flex flex-col w-full">
+<!-- Guidance / Constraint Banner -->
+<div class="mb-space-lg p-space-md rounded-xl bg-surface-container-high shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-headline-sm text-headline-sm text-on-surface">Database Integrity &amp; Cascade Policy</span>
+<span class="font-body-md text-body-md text-on-surface-variant truncate">Deleting an active class or curriculum module requires roll call sessions, student rosters, and faculty assignments to be reallocated first.</span>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest text-secondary font-data-mono text-data-mono shadow-sm">Postgres 16 Foreign Keys: STRICT</span>
+</div>
+</div>
+<!-- Header Section with Typographic Texture -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md mb-space-xl">
+<div class="flex flex-col gap-space-xs max-w-3xl">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">Academic Operations v2.4</span>
+<span class="text-outline-variant font-data-mono text-data-mono">/</span>
+<span class="font-data-mono text-data-mono text-on-surface-variant">STRUCT_CONFIG_AY2425</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">Curriculum &amp; Academic Structure Setup</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Configure classes, academic cohorts, and associate subject curricula to enable roll call rosters and teacher allocations.</p>
+</div>
+<!-- Master CTAs -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="flex items-center gap-space-xs px-space-md h-10 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container shadow-sm transition-all font-label-lg text-label-lg" id="openSubjectModal" type="button">
+<span class="material-symbols-outlined text-secondary text-[20px]">library_books</span>
+<span>+ Add New Subject</span>
+</button>
+<button class="flex items-center gap-space-xs px-space-md h-10 rounded-lg bg-secondary text-on-secondary hover:bg-primary-container shadow-md transition-all font-label-lg text-label-lg" id="openClassModal" type="button">
+<span class="material-symbols-outlined text-[20px]">add_home_work</span>
+<span>+ Create Class Cohort</span>
+</button>
+</div>
+</div>
+<!-- Metrics Bento Ribbon -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md mb-space-xl">
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Active Cohorts</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1">8</span>
+<span class="font-body-sm text-body-sm text-secondary flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px]">done_all</span> 100% Assigned Rooms
+        </span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[26px]">meeting_room</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Curriculum Catalog</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1">14</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Across 6 departments</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[26px]">menu_book</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Total Enrolled</span>
+<span class="font-headline-lg text-headline-lg text-on-surface mt-1">214</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Avg. 26.7 students/class</span>
+</div>
+<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[26px]">groups</span>
+</div>
+</div>
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant tracking-wider">Curriculum Health</span>
+<span class="font-headline-lg text-headline-lg text-primary mt-1">94.2%</span>
+<span class="font-body-sm text-body-sm text-secondary font-data-mono mt-0.5">Roster Linkage Rate</span>
+</div>
+<!-- SVG Progress Meter -->
+<div class="relative w-12 h-12 flex items-center justify-center">
+<svg class="w-12 h-12 -rotate-90" viewbox="0 0 36 36">
+<path class="text-surface-container" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="94, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-data-mono text-[10px] font-bold text-on-surface">94%</span>
+</div>
+</div>
+</div>
+<!-- Master-Detail Workspace Grid -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT SECTION: Active Classes & Cohorts (Main Canvas) -->
+<div class="xl:col-span-8 flex flex-col gap-space-md">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm px-1">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Active Classes &amp; Cohorts</h2>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-highest text-primary font-data-mono text-label-md">8 ACTIVE</span>
+</div>
+<!-- Filter Pills -->
+<div class="flex items-center p-1 bg-surface-container-low rounded-lg shadow-sm">
+<button class="px-3 py-1 rounded text-secondary font-label-md text-label-md bg-surface-container-lowest shadow-sm font-semibold">All Grades</button>
+<button class="px-3 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Grade 10</button>
+<button class="px-3 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Grade 11</button>
+<button class="px-3 py-1 rounded text-on-surface-variant hover:text-on-surface font-label-md text-label-md transition-colors">Grade 12</button>
+</div>
+</div>
+<!-- Cohort Card 1: Grade 10 - Section A -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md hover:shadow-md transition-all">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="font-headline-sm text-headline-sm font-bold">10A</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Grade 10 — Section A</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">Standard Core</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface-variant mt-1">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">pin_drop</span> Room 204</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span> AY 2024-25 Fall</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">badge</span> Advisor: Mr. David Miller</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">person_outline</span>
+<span class="font-bold font-data-mono">28</span> Students
+            </div>
+<div class="relative inline-block text-left">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" onclick="toggleActionMenu('menu-10a')">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-48 rounded-xl bg-surface-container-lowest shadow-xl p-1 z-30" id="menu-10a">
+<button class="w-full text-left px-3 py-2 rounded-lg hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">edit</span> Edit Class Details
+                </button>
+<button class="w-full text-left px-3 py-2 rounded-lg hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">add_link</span> Assign Subjects
+                </button>
+<button class="w-full text-left px-3 py-2 rounded-lg hover:bg-error-container text-error font-label-md text-label-md flex items-center gap-2" onclick="showDeleteConfirm('Grade 10 - Section A')">
+<span class="material-symbols-outlined text-[16px]">delete_forever</span> Delete Class
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Linked Curricula Row -->
+<div class="pt-space-sm flex flex-col gap-space-xs bg-surface-container-low p-space-md rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">4 Linked Subjects for Roll Call</span>
+<button class="font-label-sm text-label-sm text-secondary hover:text-primary font-bold flex items-center gap-1 transition-colors" onclick="openLinkSubjectModal('Grade 10 - Section A')">
+<span class="material-symbols-outlined text-[16px]">playlist_add</span> Associate More
+            </button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-space-sm mt-1">
+<!-- Subject Pill 1 -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between group">
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Mathematics</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">MATH-101</span>
+</div>
+<button class="text-outline hover:text-error transition-colors p-1 rounded-md hover:bg-surface-container" title="Remove from class">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Subject Pill 2 -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between group">
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Physics</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">PHYS-201</span>
+</div>
+<button class="text-outline hover:text-error transition-colors p-1 rounded-md hover:bg-surface-container" title="Remove from class">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Subject Pill 3 -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between group">
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Chemistry</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">CHEM-102</span>
+</div>
+<button class="text-outline hover:text-error transition-colors p-1 rounded-md hover:bg-surface-container" title="Remove from class">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Subject Pill 4 -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between group">
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">English Lit</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">ENG-105</span>
+</div>
+<button class="text-outline hover:text-error transition-colors p-1 rounded-md hover:bg-surface-container" title="Remove from class">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-outline">
+<span class="material-symbols-outlined text-[15px]">sync_alt</span>
+<span>Daily Schedule: Period 1 through Period 6 Synchronized</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Class Ledger</button>
+<button class="font-label-md text-label-md text-secondary font-semibold hover:text-primary transition-colors">Manage Attendance Roster →</button>
+</div>
+</div>
+</div>
+<!-- Cohort Card 2: Grade 11 - Section B -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md hover:shadow-md transition-all">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-secondary-container text-on-secondary flex items-center justify-center shrink-0">
+<span class="font-headline-sm text-headline-sm font-bold">11B</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Grade 11 — Section B</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-secondary font-label-sm text-label-sm font-semibold">Humanities &amp; Sci</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface-variant mt-1">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">pin_drop</span> Room 102</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span> AY 2024-25 Fall</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">badge</span> Advisor: Ms. Sarah Connor</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">person_outline</span>
+<span class="font-bold font-data-mono">26</span> Students
+            </div>
+<div class="relative inline-block text-left">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" onclick="toggleActionMenu('menu-11b')">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-48 rounded-xl bg-surface-container-lowest shadow-xl p-1 z-30" id="menu-11b">
+<button class="w-full text-left px-3 py-2 rounded-lg hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">edit</span> Edit Class Details
+                </button>
+<button class="w-full text-left px-3 py-2 rounded-lg hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">add_link</span> Assign Subjects
+                </button>
+<button class="w-full text-left px-3 py-2 rounded-lg hover:bg-error-container text-error font-label-md text-label-md flex items-center gap-2" onclick="showDeleteConfirm('Grade 11 - Section B')">
+<span class="material-symbols-outlined text-[16px]">delete_forever</span> Delete Class
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Linked Curricula Row -->
+<div class="pt-space-sm flex flex-col gap-space-xs bg-surface-container-low p-space-md rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">3 Linked Subjects for Roll Call</span>
+<button class="font-label-sm text-label-sm text-secondary hover:text-primary font-bold flex items-center gap-1 transition-colors" onclick="openLinkSubjectModal('Grade 11 - Section B')">
+<span class="material-symbols-outlined text-[16px]">playlist_add</span> Associate More
+            </button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-sm mt-1">
+<!-- Subject Pill 1 -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between group">
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Biology</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">BIO-204</span>
+</div>
+<button class="text-outline hover:text-error transition-colors p-1 rounded-md hover:bg-surface-container" title="Remove from class">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Subject Pill 2 -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between group">
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Chemistry</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">CHEM-102</span>
+</div>
+<button class="text-outline hover:text-error transition-colors p-1 rounded-md hover:bg-surface-container" title="Remove from class">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Subject Pill 3 -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between group">
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">World History</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">HIST-110</span>
+</div>
+<button class="text-outline hover:text-error transition-colors p-1 rounded-md hover:bg-surface-container" title="Remove from class">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-outline">
+<span class="material-symbols-outlined text-[15px]">event_available</span>
+<span>Laboratory Blocks: Tue/Thu Cohort Lab Rotation</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Class Ledger</button>
+<button class="font-label-md text-label-md text-secondary font-semibold hover:text-primary transition-colors">Manage Attendance Roster →</button>
+</div>
+</div>
+</div>
+<!-- Cohort Card 3: Grade 12 - Advanced STEM -->
+<div class="rounded-xl bg-surface-container-lowest p-space-lg shadow-sm flex flex-col gap-space-md hover:shadow-md transition-all">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container text-on-tertiary flex items-center justify-center shrink-0">
+<span class="font-headline-sm text-headline-sm font-bold">12S</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Grade 12 — Advanced STEM</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-primary font-label-sm text-label-sm font-semibold">Honors Accelerated</span>
+</div>
+<div class="flex flex-wrap items-center gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface-variant mt-1">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">pin_drop</span> Lab 3 (East Wing)</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">calendar_today</span> AY 2024-25 Fall</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-secondary">badge</span> Advisor: Dr. Robert Chen</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-surface-container-low text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-primary">person_outline</span>
+<span class="font-bold font-data-mono">22</span> Students
+            </div>
+<div class="relative inline-block text-left">
+<button class="w-8 h-8 rounded-lg flex items-center justify-center hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" onclick="toggleActionMenu('menu-12s')">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-48 rounded-xl bg-surface-container-lowest shadow-xl p-1 z-30" id="menu-12s">
+<button class="w-full text-left px-3 py-2 rounded-lg hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">edit</span> Edit Class Details
+                </button>
+<button class="w-full text-left px-3 py-2 rounded-lg hover:bg-surface-container text-on-surface font-label-md text-label-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">add_link</span> Assign Subjects
+                </button>
+<button class="w-full text-left px-3 py-2 rounded-lg hover:bg-error-container text-error font-label-md text-label-md flex items-center gap-2" onclick="showDeleteConfirm('Grade 12 - Advanced STEM')">
+<span class="material-symbols-outlined text-[16px]">delete_forever</span> Delete Class
+                </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Linked Curricula Row -->
+<div class="pt-space-sm flex flex-col gap-space-xs bg-surface-container-low p-space-md rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">2 Linked Subjects for Roll Call</span>
+<button class="font-label-sm text-label-sm text-secondary hover:text-primary font-bold flex items-center gap-1 transition-colors" onclick="openLinkSubjectModal('Grade 12 - Advanced STEM')">
+<span class="material-symbols-outlined text-[16px]">playlist_add</span> Associate More
+            </button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm mt-1">
+<!-- Subject Pill 1 -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between group">
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Advanced Calculus BC</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">MATH-302</span>
+</div>
+<button class="text-outline hover:text-error transition-colors p-1 rounded-md hover:bg-surface-container" title="Remove from class">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Subject Pill 2 -->
+<div class="p-2.5 rounded-lg bg-surface-container-lowest shadow-sm flex items-center justify-between group">
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface font-semibold truncate">Advanced Physics C</span>
+<span class="font-data-mono text-body-sm text-on-surface-variant">PHYS-305</span>
+</div>
+<button class="text-outline hover:text-error transition-colors p-1 rounded-md hover:bg-surface-container" title="Remove from class">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex items-center gap-space-xs font-body-sm text-body-sm text-outline">
+<span class="material-symbols-outlined text-[15px]">biotech</span>
+<span>Capstone Lab Practicum scheduled on Fridays</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors">Class Ledger</button>
+<button class="font-label-md text-label-md text-secondary font-semibold hover:text-primary transition-colors">Manage Attendance Roster →</button>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT SECTION: Subject Curriculum Directory (14 Subjects) -->
+<div class="xl:col-span-4 flex flex-col gap-space-md">
+<div class="p-space-lg rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-md">
+<!-- Directory Header -->
+<div class="flex items-center justify-between">
+<div class="flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Subject Directory</h3>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Curriculum Catalog • 14 Modules</span>
+</div>
+<span class="p-1.5 rounded-lg bg-surface-container text-secondary">
+<span class="material-symbols-outlined text-[20px]">dataset</span>
+</span>
+</div>
+<!-- Search Bar -->
+<div class="relative w-full">
+<span class="absolute inset-y-0 left-3 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[18px]">search</span>
+</span>
+<input class="w-full h-10 pl-10 pr-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest focus:shadow-md transition-all" id="subjectSearch" placeholder="Search by name, code or faculty..." type="text"/>
+</div>
+<!-- Direct Associate with Class Helper Card -->
+<div class="p-space-sm rounded-lg bg-surface-container-high flex flex-col gap-space-xs">
+<div class="flex items-center gap-1.5 text-secondary">
+<span class="material-symbols-outlined text-[16px]">hub</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">Quick Association Linker</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs mt-1">
+<select class="h-9 px-2 rounded-md bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none">
+<option value="">Select Subject</option>
+<option value="MATH-101">MATH-101 (Math)</option>
+<option value="PHYS-201">PHYS-201 (Physics)</option>
+<option value="CHEM-102">CHEM-102 (Chemistry)</option>
+<option value="BIO-204">BIO-204 (Biology)</option>
+</select>
+<select class="h-9 px-2 rounded-md bg-surface-container-lowest text-on-surface font-body-sm text-body-sm focus:outline-none">
+<option value="">Target Class</option>
+<option value="10A">Grade 10 - Sec A</option>
+<option value="11B">Grade 11 - Sec B</option>
+<option value="12S">Grade 12 - STEM</option>
+</select>
+</div>
+<button class="w-full mt-1 py-1.5 bg-primary text-on-primary rounded-md font-label-sm text-label-sm font-semibold hover:bg-secondary transition-colors" type="button">
+            Attach Subject to Cohort
+          </button>
+</div>
+<!-- Subject Items List -->
+<div class="flex flex-col gap-space-xs max-h-[560px] overflow-y-auto pr-1" id="subjectListContainer">
+<!-- Subject Item 1 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-primary/10 text-primary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">calculate</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Mathematics</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-data-mono text-[10px] text-primary">MATH-101</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Math Dept</span>
+<span>•</span>
+<span>4 Faculty</span>
+<span>•</span>
+<span class="text-secondary font-semibold">6 Cohorts</span>
+</div>
+</div>
+</div>
+<button class="opacity-0 group-hover:opacity-100 p-1 rounded hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Subject Item 2 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-secondary/10 text-secondary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">science</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Physics</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-data-mono text-[10px] text-secondary">PHYS-201</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Sci &amp; Tech</span>
+<span>•</span>
+<span>3 Faculty</span>
+<span>•</span>
+<span class="text-secondary font-semibold">4 Cohorts</span>
+</div>
+</div>
+</div>
+<button class="opacity-0 group-hover:opacity-100 p-1 rounded hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Subject Item 3 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-tertiary-container/20 text-tertiary flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">experiment</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Chemistry</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-data-mono text-[10px] text-primary">CHEM-102</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Natural Sci</span>
+<span>•</span>
+<span>3 Faculty</span>
+<span>•</span>
+<span class="text-secondary font-semibold">5 Cohorts</span>
+</div>
+</div>
+</div>
+<button class="opacity-0 group-hover:opacity-100 p-1 rounded hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Subject Item 4 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-primary-container/10 text-primary-container flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">psychology</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">Biology</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-data-mono text-[10px] text-primary">BIO-204</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Bio Sciences</span>
+<span>•</span>
+<span>2 Faculty</span>
+<span>•</span>
+<span class="text-secondary font-semibold">3 Cohorts</span>
+</div>
+</div>
+</div>
+<button class="opacity-0 group-hover:opacity-100 p-1 rounded hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Subject Item 5 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">menu_book</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">English Literature</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-data-mono text-[10px] text-on-surface">ENG-105</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Languages</span>
+<span>•</span>
+<span>5 Faculty</span>
+<span>•</span>
+<span class="text-secondary font-semibold">8 Cohorts</span>
+</div>
+</div>
+</div>
+<button class="opacity-0 group-hover:opacity-100 p-1 rounded hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+<!-- Subject Item 6 -->
+<div class="p-space-sm rounded-lg bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between group">
+<div class="flex items-start gap-space-sm min-w-0">
+<div class="w-8 h-8 rounded-lg bg-surface-container-high text-on-surface flex items-center justify-center shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px]">public</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md text-on-surface font-bold truncate">World History</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container font-data-mono text-[10px] text-on-surface">HIST-110</span>
+</div>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span>Social Studies</span>
+<span>•</span>
+<span>2 Faculty</span>
+<span>•</span>
+<span class="text-secondary font-semibold">3 Cohorts</span>
+</div>
+</div>
+</div>
+<button class="opacity-0 group-hover:opacity-100 p-1 rounded hover:bg-surface-container-lowest text-on-surface-variant hover:text-on-surface transition-all">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Inline Quick Add Subject Card -->
+<div class="pt-space-sm mt-space-xs">
+<button class="w-full py-2.5 px-3 rounded-lg bg-surface-container hover:bg-surface-container-high text-primary font-label-md text-label-md font-semibold flex items-center justify-center gap-2 transition-all" id="toggleQuickSubject" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Quick Register Subject Code</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Modal / Slide-out: Add New Subject Modal (Initially Hidden) -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4" id="subjectModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">library_add</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Add Subject Curriculum</h3>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container" id="closeSubjectModal">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-space-sm" onsubmit="event.preventDefault(); closeSubjectModalFn();">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">Subject Title</label>
+<input class="h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest shadow-sm" placeholder="e.g. Advanced Organic Chemistry" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">Subject Code</label>
+<input class="h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest shadow-sm" placeholder="e.g. CHEM-301" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">Academic Department</label>
+<select class="h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none">
+<option>Natural Sciences</option>
+<option>Mathematics &amp; Logic</option>
+<option>Humanities &amp; Languages</option>
+<option>Arts &amp; Physical Ed</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">Default Weekly Periods</label>
+<input class="h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest shadow-sm" type="number" value="4"/>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-sm">
+<button class="px-4 py-2 rounded-lg text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" id="cancelSubjectModal" type="button">Cancel</button>
+<button class="px-4 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-primary transition-colors" type="submit">Create Subject</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Interactive Modal / Slide-out: Create Class Modal (Initially Hidden) -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4" id="classModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-xl w-full p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">add_home_work</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Create New Class Cohort</h3>
+</div>
+<button class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:bg-surface-container" id="closeClassModal">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-space-sm" onsubmit="event.preventDefault(); closeClassModalFn();">
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">Grade Level</label>
+<select class="h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none">
+<option>Grade 9</option>
+<option>Grade 10</option>
+<option>Grade 11</option>
+<option>Grade 12</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">Section Identifier</label>
+<input class="h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest shadow-sm" placeholder="e.g. Section C or STEM Alpha" type="text"/>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">Designated Homeroom</label>
+<input class="h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest shadow-sm" placeholder="e.g. Room 301" type="text"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">Faculty Cohort Advisor</label>
+<input class="h-10 px-3 rounded-lg bg-surface-container-low text-on-surface font-body-md text-body-md focus:outline-none focus:bg-surface-container-lowest shadow-sm" placeholder="e.g. Dr. Emily Walsh" type="text"/>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm uppercase text-on-surface-variant font-semibold">Academic Year</label>
+<input class="h-10 px-3 rounded-lg bg-surface-container text-on-surface-variant font-body-md text-body-md focus:outline-none cursor-not-allowed" readonly="" type="text" value="AY 2024-25 Fall Semester"/>
+</div>
+<div class="flex items-center justify-end gap-space-sm pt-space-sm">
+<button class="px-4 py-2 rounded-lg text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" id="cancelClassModal" type="button">Cancel</button>
+<button class="px-4 py-2 rounded-lg bg-secondary text-on-secondary font-label-md text-label-md font-semibold hover:bg-primary transition-colors" type="submit">Register Cohort</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Delete Confirmation Toast / Dialog (Initially Hidden) -->
+<div class="fixed bottom-6 right-6 bg-surface-container-lowest border-l-4 border-error p-space-md rounded-xl shadow-xl z-50 hidden max-w-md flex flex-col gap-2" id="deleteConfirmDialog">
+<div class="flex items-center gap-2 text-error">
+<span class="material-symbols-outlined text-[20px]">warning</span>
+<span class="font-headline-sm text-headline-sm font-bold">Cascade Restriction Warning</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface" id="deleteConfirmText">Cannot delete cohort. Active student enrollment records must be reassigned first.</p>
+<div class="flex items-center justify-end gap-2 mt-1">
+<button class="px-3 py-1 rounded-md bg-surface-container text-on-surface font-label-sm text-label-sm" onclick="hideDeleteConfirm()">Dismiss</button>
+<button class="px-3 py-1 rounded-md bg-error text-on-error font-label-sm text-label-sm font-semibold" onclick="hideDeleteConfirm()">Open Reassignment Tool</button>
+</div>
+</div>
+<script>
+    function toggleActionMenu(id) {
+      const menu = document.getElementById(id);
+      if (menu) {
+        menu.classList.toggle('hidden');
+      }
+    }
+
+    function showDeleteConfirm(className) {
+      const toast = document.getElementById('deleteConfirmDialog');
+      const text = document.getElementById('deleteConfirmText');
+      if (toast && text) {
+        text.innerText = 'Cannot directly delete ' + className + '. You must migrate 20+ student roll call dependencies before deleting.';
+        toast.classList.remove('hidden');
+      }
+    }
+
+    function hideDeleteConfirm() {
+      const toast = document.getElementById('deleteConfirmDialog');
+      if (toast) toast.classList.add('hidden');
+    }
+
+    // Modal helpers
+    const subjectModal = document.getElementById('subjectModal');
+    const openSubjectModal = document.getElementById('openSubjectModal');
+    const closeSubjectModal = document.getElementById('closeSubjectModal');
+    const cancelSubjectModal = document.getElementById('cancelSubjectModal');
+
+    function openSubjectModalFn() { subjectModal.classList.remove('hidden'); }
+    function closeSubjectModalFn() { subjectModal.classList.add('hidden'); }
+
+    if (openSubjectModal) openSubjectModal.addEventListener('click', openSubjectModalFn);
+    if (closeSubjectModal) closeSubjectModal.addEventListener('click', closeSubjectModalFn);
+    if (cancelSubjectModal) cancelSubjectModal.addEventListener('click', closeSubjectModalFn);
+
+    const classModal = document.getElementById('classModal');
+    const openClassModal = document.getElementById('openClassModal');
+    const closeClassModal = document.getElementById('closeClassModal');
+    const cancelClassModal = document.getElementById('cancelClassModal');
+
+    function openClassModalFn() { classModal.classList.remove('hidden'); }
+    function closeClassModalFn() { classModal.classList.add('hidden'); }
+
+    if (openClassModal) openClassModal.addEventListener('click', openClassModalFn);
+    if (closeClassModal) closeClassModal.addEventListener('click', closeClassModalFn);
+    if (cancelClassModal) cancelClassModal.addEventListener('click', closeClassModalFn);
+
+    function openLinkSubjectModal(cohort) {
+      alert('Attach subject curriculum selector triggered for: ' + cohort);
+    }
+
+    // Quick filter subject search
+    const subjectSearch = document.getElementById('subjectSearch');
+    if (subjectSearch) {
+      subjectSearch.addEventListener('input', function(e) {
+        const val = e.target.value.toLowerCase();
+        const items = document.querySelectorAll('#subjectListContainer > div');
+        items.forEach(function(item) {
+          const text = item.innerText.toLowerCase();
+          item.style.display = text.includes(val) ? 'flex' : 'none';
+        });
+      });
+    }
+
+    // Close menus on click outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('[onclick^="toggleActionMenu"]') && !e.target.closest('[id^="menu-"]')) {
+        document.querySelectorAll('[id^="menu-"]').forEach(function(m) {
+          m.classList.add('hidden');
+        });
+      }
+    });
+  </script>
+</div></main></div></body></html>

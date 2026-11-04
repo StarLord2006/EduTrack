@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "primary-fixed": "#dce1ff", "secondary-container": "#316bf3", "secondary-fixed": "#dbe1ff", "tertiary": "#002e41", "surface-container-low": "#f2f3ff", "tertiary-fixed": "#c4e7ff", "on-error-container": "#93000a", "surface-container-highest": "#dae2fd", "secondary-fixed-dim": "#b4c5ff", "tertiary-fixed-dim": "#7bd0ff", "on-surface-variant": "#444651", "on-primary-fixed-variant": "#264191", "primary": "#00236f", "on-error": "#ffffff", "on-tertiary-container": "#2eb7f2", "surface-container-high": "#e2e7ff", "on-secondary-container": "#fefcff", "on-primary-fixed": "#00164e", "on-secondary-fixed": "#00174b", "surface-variant": "#dae2fd", "on-primary": "#ffffff", "on-surface": "#131b2e", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#004c69", "on-background": "#131b2e", "surface": "#faf8ff", "error-container": "#ffdad6", "surface-dim": "#d2d9f4", "secondary": "#0051d5", "on-secondary-fixed-variant": "#003ea8", "on-secondary": "#ffffff", "on-primary-container": "#90a8ff", "outline-variant": "#c5c5d3", "surface-container": "#eaedff", "inverse-surface": "#283044", "inverse-on-surface": "#eef0ff", "surface-tint": "#4059aa", "on-tertiary": "#ffffff", "primary-container": "#1e3a8a", "surface-bright": "#faf8ff", "surface-container-lowest": "#ffffff", "primary-fixed-dim": "#b6c4ff", "inverse-primary": "#b6c4ff", "outline": "#757682", "tertiary-container": "#00455f", "background": "#faf8ff", "on-tertiary-fixed": "#001e2c" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "gutter": "1.5rem", "gutter-mobile": "0.75rem", "space-xl": "2rem", "margin-mobile": "1rem", "space-md": "1rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-xs": "0.25rem", "margin": "2rem" }, "fontFamily": { "label-sm": ["Inter"], "body-sm": ["Inter"], "label-md": ["Inter"], "headline-xl-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-xl": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "body-md": ["Inter"], "body-lg": ["Inter"], "data-mono": ["Inter"], "label-lg": ["Inter"] }, "fontSize": { "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.03em", "fontWeight": "500" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-sm": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-lg-mobile": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "data-mono": ["13px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }] } } } }</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 inset-x-0 z-50 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] pt-safe"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="EduTrack Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1W602K3UyxwAV7frLaWVfTg16Y8z0E8yymdqERhr4m3RJejWWNPm2_qm5TuePQxv_c0eOZGzfZ23AMrcOIPoDQoRACW9C3dwDmV993p5__J2vGWrage1yFhLXyqt0sfpl6M9SDN-KQeVy38RXbTljI-I6kJb2SH5eGJIeMeyxoHZdU56F2tgw8dxU0L_ZRX0ZI3oVejW1jOFTCa7QymcmRZszUf22yg1pJcN8-xYKgs"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary leading-none">EduTrack</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate max-w-[100px]">Attendance</span></div><span class="inline-flex items-center px-space-sm py-0.5 rounded-full bg-surface-container-high text-primary font-label-sm text-label-sm">ADMIN</span></div><div class="flex items-center gap-space-xs"><button class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[22px]">notifications</span></button><button class="w-11 h-11 flex items-center justify-center rounded-full text-on-surface-variant hover:text-on-surface transition-colors" type="button"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></button></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 px-gutter-mobile bg-surface"><div class="flex flex-col w-full gap-space-md">
+<!-- Top Date Selector & Quick Filters Card -->
+<section class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs text-primary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="font-headline-sm text-headline-sm">Session Filter</span>
+</div>
+<span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed">LIVE SESSION</span>
+</div>
+<!-- Filter Fields Form -->
+<div class="grid grid-cols-1 gap-space-sm">
+<!-- Date Picker Input Button -->
+<div class="relative w-full">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Session Date</label>
+<button class="w-full h-11 bg-surface-container-low text-on-surface rounded-lg px-space-md flex items-center justify-between text-left focus:bg-surface-container-high transition-colors" type="button">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">event</span>
+<span class="font-body-md text-body-md font-semibold">Today, Oct 24, 2024</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-[18px]">keyboard_arrow_down</span>
+</button>
+</div>
+<!-- Class & Subject Row -->
+<div class="grid grid-cols-2 gap-space-sm">
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Class / Section</label>
+<div class="relative">
+<select class="w-full h-11 bg-surface-container-low text-on-surface rounded-lg pl-3 pr-8 font-body-sm text-body-sm appearance-none focus:outline-none focus:bg-surface-container-high">
+<option selected="">Grade 10 - Sec A</option>
+<option>Grade 10 - Sec B</option>
+<option>Grade 11 - Sec A</option>
+<option>Grade 12 - Sec C</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-3 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+<div class="relative">
+<label class="block font-label-sm text-label-sm text-on-surface-variant mb-1">Subject</label>
+<div class="relative">
+<select class="w-full h-11 bg-surface-container-low text-on-surface rounded-lg pl-3 pr-8 font-body-sm text-body-sm appearance-none focus:outline-none focus:bg-surface-container-high">
+<option selected="">Mathematics 101</option>
+<option>Physics Advanced</option>
+<option>English Lit</option>
+<option>Chemistry Lab</option>
+</select>
+<span class="material-symbols-outlined absolute right-2 top-3 pointer-events-none text-on-surface-variant text-[18px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-space-sm pt-space-xs">
+<button class="flex-1 h-11 bg-secondary text-on-secondary rounded-lg font-label-lg text-label-lg flex items-center justify-center gap-space-xs shadow-sm active:scale-[0.98] transition-transform" type="button">
+<span class="material-symbols-outlined text-[18px]">filter_alt</span>
+<span>Apply Filter</span>
+</button>
+<button class="h-11 px-space-md bg-surface-container text-on-surface rounded-lg font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button">
+          Clear
+        </button>
+</div>
+</div>
+</section>
+<!-- High-Level Summary Metrics Card -->
+<section class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-primary">Overview Metrics</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Class aggregate for Mathematics 101</p>
+</div>
+<span class="font-label-sm text-label-sm px-space-sm py-1 bg-surface-container-high text-primary rounded-full font-semibold">125 Enrolled</span>
+</div>
+<!-- Gauge & Big Metric Block -->
+<div class="flex items-center gap-space-md bg-surface-container-low rounded-xl p-space-md">
+<div class="relative w-20 h-20 flex-shrink-0 flex items-center justify-center">
+<!-- SVG Radial Progress Ring -->
+<svg class="w-20 h-20 transform -rotate-90" viewbox="0 0 72 72">
+<circle class="text-surface-container-highest" cx="36" cy="36" fill="transparent" r="30" stroke="currentColor" stroke-width="6"></circle>
+<circle class="text-secondary-container" cx="36" cy="36" fill="transparent" r="30" stroke="currentColor" stroke-dasharray="188.5" stroke-dashoffset="14.3" stroke-linecap="round" stroke-width="6"></circle>
+</svg>
+<div class="absolute inset-0 flex flex-col items-center justify-center text-center">
+<span class="font-headline-sm text-headline-sm font-bold text-primary leading-none">92.4%</span>
+</div>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold">Net Attendance Rate</span>
+<div class="flex items-center gap-1 mt-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] text-secondary">info</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant leading-snug">Present + Late count as valid attendance</span>
+</div>
+</div>
+</div>
+<!-- Metric Breakdown Pills / Grid -->
+<div class="grid grid-cols-4 gap-space-xs text-center">
+<div class="bg-surface-container p-space-sm rounded-lg flex flex-col items-center">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Total</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">125</span>
+</div>
+<div class="bg-primary-fixed/40 p-space-sm rounded-lg flex flex-col items-center">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-body-sm text-body-sm text-primary font-medium">Present</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">108</span>
+</div>
+<div class="bg-secondary-fixed/50 p-space-sm rounded-lg flex flex-col items-center">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span class="font-body-sm text-body-sm text-on-secondary-fixed-variant font-medium">Late</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-secondary-container">8</span>
+</div>
+<div class="bg-error-container/60 p-space-sm rounded-lg flex flex-col items-center">
+<div class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="font-body-sm text-body-sm text-on-error-container font-medium">Absent</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-error">9</span>
+</div>
+</div>
+</section>
+<!-- Primary Quick Action: Big CTA -->
+<section class="w-full">
+<button class="w-full h-14 bg-primary text-on-primary rounded-xl font-headline-sm text-headline-sm flex items-center justify-center gap-space-sm shadow-md active:scale-[0.99] transition-transform" type="button">
+<span class="material-symbols-outlined text-[24px]">add_circle</span>
+<span>Quick Roll Call (Mark Attendance)</span>
+</button>
+</section>
+<!-- Attendance Records Section -->
+<section class="w-full flex flex-col gap-space-sm">
+<!-- List Header & Summary Counter -->
+<div class="flex items-center justify-between px-space-xs pt-space-xs">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Roster Records</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Showing 1–20 of 125 recorded entries</p>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+</button>
+<button class="w-9 h-9 rounded-lg bg-surface-container flex items-center justify-center text-on-surface hover:bg-surface-container-high transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+<!-- Student Attendance Cards -->
+<div class="flex flex-col gap-space-sm">
+<!-- Card 1: Present -->
+<article class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-headline-sm text-headline-sm flex-shrink-0">
+              AL
+            </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Alexander Liam Davis</span>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="font-data-mono text-data-mono text-on-surface-variant">STU-2024-042</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Math 101</span>
+</div>
+</div>
+</div>
+<!-- Status Pill: Present -->
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-primary-fixed/40 text-primary font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+            Present
+          </span>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-low/50 px-space-sm py-1.5 rounded-lg">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-body-sm text-body-sm">Marked at 08:02 AM</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Edit Alexander" class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="Delete Alexander" class="p-1 rounded text-on-surface-variant hover:text-error hover:bg-error-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 2: Late -->
+<article class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed font-headline-sm text-headline-sm flex-shrink-0">
+              SM
+            </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Sophia Mia Martinez</span>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="font-data-mono text-data-mono text-on-surface-variant">STU-2024-088</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Math 101</span>
+</div>
+</div>
+</div>
+<!-- Status Pill: Late with delay -->
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-secondary-fixed/50 text-secondary-container font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+            Late (14m)
+          </span>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-low/50 px-space-sm py-1.5 rounded-lg">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-body-sm text-body-sm">Marked at 08:24 AM (Late slip verified)</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Edit Sophia" class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="Delete Sophia" class="p-1 rounded text-on-surface-variant hover:text-error hover:bg-error-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 3: Absent -->
+<article class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-on-error-container font-headline-sm text-headline-sm flex-shrink-0">
+              EC
+            </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Ethan Charles Wright</span>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="font-data-mono text-data-mono text-on-surface-variant">STU-2024-104</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Math 101</span>
+</div>
+</div>
+</div>
+<!-- Status Pill: Absent -->
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-error-container text-on-error-container font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+            Absent
+          </span>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-error-container/20 px-space-sm py-1.5 rounded-lg">
+<div class="flex items-center gap-1 text-error">
+<span class="material-symbols-outlined text-[16px]">notification_important</span>
+<span class="font-body-sm text-body-sm font-medium">Unexcused • SMS alert dispatched</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Edit Ethan" class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="Delete Ethan" class="p-1 rounded text-on-surface-variant hover:text-error hover:bg-error-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Card 4: Present -->
+<article class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm transition-all">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary font-headline-sm text-headline-sm flex-shrink-0">
+              OK
+            </div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-lg text-label-lg text-on-surface font-semibold truncate">Olivia Katherine Patel</span>
+<div class="flex items-center gap-space-xs mt-0.5">
+<span class="font-data-mono text-data-mono text-on-surface-variant">STU-2024-015</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Math 101</span>
+</div>
+</div>
+</div>
+<!-- Status Pill: Present -->
+<span class="inline-flex items-center gap-1.5 px-space-sm py-1 rounded-full bg-primary-fixed/40 text-primary font-label-md text-label-md">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+            Present
+          </span>
+</div>
+<div class="flex items-center justify-between pt-space-xs bg-surface-container-low/50 px-space-sm py-1.5 rounded-lg">
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">schedule</span>
+<span class="font-body-sm text-body-sm">Marked at 08:04 AM</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button aria-label="Edit Olivia" class="p-1 rounded text-on-surface-variant hover:text-primary hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button aria-label="Delete Olivia" class="p-1 rounded text-on-surface-variant hover:text-error hover:bg-error-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Clean Pagination & Range Bar -->
+<footer class="w-full bg-surface-container-lowest rounded-xl p-space-md shadow-sm flex flex-col gap-space-sm mt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Page limit: <strong class="text-on-surface font-semibold">20 / page</strong> (max 100)</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 bg-surface-container rounded font-data-mono text-on-surface">Page 1 of 7</span>
+</div>
+<div class="flex items-center justify-between gap-space-sm pt-space-xs">
+<button class="flex-1 h-10 bg-surface-container text-on-surface-variant opacity-60 rounded-lg font-label-md text-label-md flex items-center justify-center gap-1 cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+<span>Previous</span>
+</button>
+<div class="flex items-center gap-1">
+<button class="w-9 h-10 bg-primary text-on-primary rounded-lg font-label-md text-label-md flex items-center justify-center" type="button">1</button>
+<button class="w-9 h-10 bg-surface-container text-on-surface rounded-lg font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button">2</button>
+<button class="w-9 h-10 bg-surface-container text-on-surface rounded-lg font-label-md text-label-md flex items-center justify-center hover:bg-surface-container-high transition-colors" type="button">3</button>
+</div>
+<button class="flex-1 h-10 bg-surface-container text-on-surface rounded-lg font-label-md text-label-md flex items-center justify-center gap-1 hover:bg-surface-container-high transition-colors" type="button">
+<span>Next</span>
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</footer>
+</div>
+<script>
+  // Micro-interactions for rapid testing
+  document.addEventListener('DOMContentLoaded', () => {
+    const deleteButtons = document.querySelectorAll('button[aria-label^="Delete"]');
+    deleteButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const card = e.currentTarget.closest('article');
+        if (card) {
+          card.classList.add('opacity-40', 'pointer-events-none');
+          setTimeout(() => {
+            card.remove();
+          }, 250);
+        }
+      });
+    });
+  });
+</script></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-surface/85 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.05)]" data-active-classes="text-primary bg-primary-fixed/40 font-semibold"><div class="flex justify-around items-center h-16 px-space-xs"><a aria-current="page" class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 px-space-xs rounded-xl transition-all text-primary bg-primary-fixed/40 font-semibold" data-path="attendance" href="#"><span class="material-symbols-outlined text-[24px]">event_available</span><span class="font-label-sm text-label-sm">Attendance</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 px-space-xs rounded-xl text-on-surface-variant transition-all" data-path="students" href="#"><span class="material-symbols-outlined text-[24px]">badge</span><span class="font-label-sm text-label-sm">Students</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 px-space-xs rounded-xl text-on-surface-variant transition-all" data-path="setup" href="#"><span class="material-symbols-outlined text-[24px]">tune</span><span class="font-label-sm text-label-sm">Setup</span></a><a class="flex flex-col items-center justify-center gap-0.5 min-w-[64px] min-h-[44px] py-1 px-space-xs rounded-xl text-on-surface-variant transition-all" data-path="access" href="#"><span class="material-symbols-outlined text-[24px]">security</span><span class="font-label-sm text-label-sm">Access</span></a></div></nav></body></html>

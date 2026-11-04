@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduTrack · Attendance Management</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<main class="page">
+    <aside class="sidebar" aria-label="Application sidebar">
+        <div class="brand" aria-label="EduTrack">
+            <span class="brand-mark" aria-hidden="true">E</span>
+            <span class="brand-copy"><strong>EduTrack</strong><small>Attendance workspace</small></span>
+        </div>
+        <div class="sidebar-divider"></div>
+        <p class="sidebar-label">WORKSPACE</p>
+        <nav class="page-nav" aria-label="Project sections" hidden>
+            <button type="button" class="nav-button active" data-panel="setup-panel" aria-current="page">
+                <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h5A1.5 1.5 0 0 1 12 5.5v5a1.5 1.5 0 0 1-1.5 1.5h-5A1.5 1.5 0 0 1 4 10.5zM14 5.5A1.5 1.5 0 0 1 15.5 4h3A1.5 1.5 0 0 1 20 5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 14 8.5zM14 14.5a1.5 1.5 0 0 1 1.5-1.5h3a1.5 1.5 0 0 1 1.5 1.5v4a1.5 1.5 0 0 1-1.5 1.5h-3a1.5 1.5 0 0 1-1.5-1.5zM4 16.5A1.5 1.5 0 0 1 5.5 15h5a1.5 1.5 0 0 1 1.5 1.5v2A1.5 1.5 0 0 1 10.5 20h-5A1.5 1.5 0 0 1 4 18.5z"/></svg></span>
+                <span>Classes &amp; subjects</span>
+            </button>
+            <button type="button" class="nav-button" data-panel="people-panel">
+                <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.25"/><path d="M3.5 19v-1.3A4.7 4.7 0 0 1 8.2 13h1.6a4.7 4.7 0 0 1 4.7 4.7V19zM16 4.9a3.2 3.2 0 0 1 0 6.2M17.1 13.2a4.4 4.4 0 0 1 3.4 4.3V19h-3"/></svg></span>
+                <span>Students &amp; enrollment</span>
+            </button>
+            <button type="button" class="nav-button" data-panel="access-panel">
+                <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3M12 14v2"/></svg></span>
+                <span>Access &amp; roles</span>
+            </button>
+            <button type="button" class="nav-button" data-panel="attendance-panel">
+                <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="16" rx="2"/><path d="M7.5 3v4M16.5 3v4M3.5 9.5h17M8 14l2.2 2.2L16.5 10"/></svg></span>
+                <span>Attendance</span>
+            </button>
+        </nav>
+        <div class="sidebar-bottom">
+            <span class="sidebar-bottom-mark" aria-hidden="true">ET</span>
+            <span><strong>EduTrack</strong><small>School operations</small></span>
+        </div>
+    </aside>
+
+    <div class="main-content">
+    <header class="page-header">
+        <div>
+            <p class="eyebrow">SCHOOL OPERATIONS <span aria-hidden="true">/</span> WORKSPACE</p>
+            <h1>Attendance management</h1>
+            <p class="intro">A clear view of your classes, students, and daily attendance.</p>
+        </div>
+        <div id="signed-in-bar" class="signed-in-bar" hidden>
+            <span class="profile-avatar" aria-hidden="true">ET</span>
+            <span class="profile-copy">Signed in as <strong id="signed-in-name"></strong></span>
+            <button id="logout-button" type="button" class="secondary-button">Log out</button>
+        </div>
+    </header>
+
+    <section class="status-panel" aria-live="polite">
+        <span id="status-dot" class="status-dot"></span>
+        <div>
+            <strong id="status-title">Connecting to the backend…</strong>
+            <p id="status-message">Loading students, subjects, classes and enrollments.</p>
+        </div>
+    </section>
+
+    <section id="login-panel" class="card auth-card">
+        <p class="step">DAY 8 · SPRING SECURITY</p>
+        <h2>Sign in to manage attendance</h2>
+        <form id="auth-form" class="form-grid">
+            <label for="auth-username">Username</label>
+            <input id="auth-username" name="username" required maxlength="50" autocomplete="username">
+            <label for="auth-password">Password</label>
+            <input id="auth-password" name="password" type="password" required minlength="8" maxlength="72" autocomplete="current-password">
+            <div class="auth-actions">
+                <button type="submit">Log in</button>
+                <button id="register-button" type="button" class="secondary-button">Create account</button>
+            </div>
+            <p id="auth-message" class="form-message" aria-live="polite"></p>
+        </form>
+        <p class="hint">Create an account once, then log in. Your password is stored as a BCrypt hash.</p>
+    </section>
+
+    <div id="setup-panel" class="view-panel grid" aria-label="Subject and class setup">
+        <section class="card">
+            <p class="step">STEP 1</p>
+            <h2>Subjects</h2>
+            <form id="subject-form" class="form-grid">
+                <label for="subject-name">Subject name</label>
+                <input id="subject-name" name="name" required maxlength="100" placeholder="e.g. Mathematics">
+                <button type="submit">Add subject</button>
+                <p id="subject-message" class="form-message" aria-live="polite"></p>
+            </form>
+            <ul id="subject-list" class="item-list"></ul>
+            <p class="hint">A subject can only be deleted after its classes are deleted.</p>
+        </section>
+
+        <section class="card">
+            <p class="step">STEP 2</p>
+            <h2>Classes</h2>
+            <form id="class-form" class="form-grid">
+                <label for="class-name">Class name</label>
+                <input id="class-name" name="name" required maxlength="100" placeholder="e.g. Grade 10 A">
+                <span class="form-label">Subjects</span>
+                <div id="class-subject-options" class="checkbox-list" aria-label="Subjects for this class"></div>
+                <p class="hint">Choose one or more subjects for this class.</p>
+                <button type="submit">Add class</button>
+                <p id="class-message" class="form-message" aria-live="polite"></p>
+            </form>
+            <ul id="class-list" class="item-list"></ul>
+            <p class="hint">A class can only be deleted after its enrollments are removed.</p>
+        </section>
+    </div>
+
+    <div id="people-panel" class="view-panel grid" aria-label="Students and enrollments" hidden>
+        <section class="card">
+            <p class="step">STEP 3</p>
+            <h2>Students</h2>
+            <form id="student-form" class="form-grid">
+                <label for="student-name">Student name</label>
+                <input id="student-name" name="name" required maxlength="100" placeholder="e.g. Asha Sharma">
+                <label for="student-email">Email</label>
+                <input id="student-email" name="email" type="email" required maxlength="150" placeholder="asha@example.com">
+                <button type="submit">Add student</button>
+                <p id="student-message" class="form-message" aria-live="polite"></p>
+            </form>
+            <ul id="student-list" class="item-list"></ul>
+            <div id="student-pagination" class="pagination-controls" aria-label="Student list pages"></div>
+            <p class="hint">Student options in the enrollment and account-link forms follow the currently selected page.</p>
+        </section>
+
+        <section class="card">
+            <p class="step">STEP 4</p>
+            <h2>Enrollments</h2>
+            <form id="enrollment-form" class="form-grid">
+                <label for="enrollment-student">Student</label>
+                <select id="enrollment-student" name="studentId" required></select>
+                <label for="enrollment-class">Class</label>
+                <select id="enrollment-class" name="classId" required></select>
+                <button type="submit">Enroll student</button>
+                <p id="enrollment-message" class="form-message" aria-live="polite"></p>
+            </form>
+            <ul id="enrollment-list" class="item-list"></ul>
+        </section>
+    </div>
+
+    <div id="access-panel" class="view-panel grid" aria-label="Account roles and class access" hidden>
+        <section class="card">
+            <p class="step">ADMIN · ACCOUNTS</p>
+            <h2>Create a login</h2>
+            <form id="access-create-form" class="form-grid">
+                <label for="access-new-username">Username</label>
+                <input id="access-new-username" name="username" required maxlength="50" autocomplete="off">
+                <label for="access-new-password">Temporary password</label>
+                <input id="access-new-password" name="password" type="password" required minlength="8" maxlength="72" autocomplete="new-password">
+                <button type="submit">Create student login</button>
+                <p class="hint">New logins start as STUDENT. Change their role below.</p>
+                <p id="access-create-message" class="form-message" aria-live="polite"></p>
+            </form>
+            <h3>Accounts</h3>
+            <ul id="access-account-list" class="item-list"></ul>
+        </section>
+
+        <section class="card">
+            <p class="step">ADMIN · ROLE ASSIGNMENT</p>
+            <h2>Set account role</h2>
+            <form id="role-form" class="form-grid">
+                <label for="role-account">Account</label>
+                <select id="role-account" required></select>
+                <label for="account-role">Role</label>
+                <select id="account-role" required>
+                    <option value="STUDENT">STUDENT</option>
+                    <option value="TEACHER">TEACHER</option>
+                    <option value="ADMIN">ADMIN</option>
+                </select>
+                <div id="student-link-field" class="form-grid compact-fields">
+                    <label for="linked-student">Link student record</label>
+                    <select id="linked-student"></select>
+                </div>
+                <button type="submit">Save role</button>
+                <p id="role-message" class="form-message" aria-live="polite"></p>
+            </form>
+
+            <h2>Assign teacher to a class</h2>
+            <form id="teacher-assignment-form" class="form-grid">
+                <label for="teacher-class">Class</label>
+                <select id="teacher-class" required></select>
+                <label for="class-teacher">Teacher account</label>
+                <select id="class-teacher" required></select>
+                <button type="submit">Assign teacher</button>
+                <p id="teacher-assignment-message" class="form-message" aria-live="polite"></p>
+            </form>
+        </section>
+    </div>
+
+    <div id="attendance-panel" class="view-panel grid" aria-label="Attendance" hidden>
+        <section class="card card-wide attendance-card">
+            <div class="attendance-heading">
+                <div>
+                    <p class="step">STEP 5</p>
+                    <h2>Attendance</h2>
+                    <p class="section-copy">Choose a class, subject and date. Only students without a mark for that subject and date can be selected.</p>
+                </div>
+            </div>
+
+            <div class="attendance-layout">
+                <form id="attendance-form" class="form-grid attendance-form">
+                    <label for="attendance-class">Class</label>
+                    <select id="attendance-class" required></select>
+
+                    <label for="attendance-subject">Subject</label>
+                    <select id="attendance-subject" name="subjectId" required></select>
+
+                    <label for="attendance-enrollment">Student in this class</label>
+                    <select id="attendance-enrollment" name="enrollmentId" required></select>
+
+                    <label for="attendance-date">Attendance date</label>
+                    <input id="attendance-date" name="attendanceDate" type="date" required>
+
+                    <label for="attendance-status">Status</label>
+                    <select id="attendance-status" name="status" required>
+                        <option value="PRESENT" selected>Present</option>
+                        <option value="ABSENT">Absent</option>
+                        <option value="LATE">Late</option>
+                    </select>
+
+                    <button type="submit">Save attendance</button>
+                    <p id="attendance-message" class="form-message" aria-live="polite"></p>
+                </form>
+
+                <section class="attendance-records" aria-label="Attendance records">
+                    <div class="records-heading">
+                        <div>
+                            <h3>Saved records</h3>
+                            <p>Newest dates appear first.</p>
+                        </div>
+                        <form id="attendance-filter-form" class="filter-form">
+                            <label class="visually-hidden" for="attendance-filter-date">Filter by date</label>
+                            <input id="attendance-filter-date" type="date">
+                            <label class="visually-hidden" for="attendance-filter-class">Filter by class</label>
+                            <select id="attendance-filter-class"></select>
+                            <label class="visually-hidden" for="attendance-filter-subject">Filter by subject</label>
+                            <select id="attendance-filter-subject"></select>
+                            <button type="submit" class="filter-button">Filter</button>
+                            <button id="clear-attendance-filter" type="button" class="text-button">Clear filters</button>
+                        </form>
+                    </div>
+
+                    <section class="summary-grid" aria-label="Attendance calculations" aria-live="polite">
+                        <article class="summary-card"><span>Total marks</span><strong id="summary-total">0</strong></article>
+                        <article class="summary-card"><span>Present</span><strong id="summary-present">0</strong></article>
+                        <article class="summary-card"><span>Late</span><strong id="summary-late">0</strong></article>
+                        <article class="summary-card"><span>Absent</span><strong id="summary-absent">0</strong></article>
+                        <article class="summary-card summary-highlight"><span>Attendance rate</span><strong id="summary-rate">0.00%</strong></article>
+                    </section>
+                    <p class="hint summary-hint">Calculation: (Present + Late) ÷ Total marks × 100. Late counts as attended.</p>
+
+                    <div class="table-wrap">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Student</th>
+                                <th>Class</th>
+                                <th>Subject</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody id="attendance-table-body"></tbody>
+                        </table>
+                        <p id="attendance-empty" class="empty-state">No attendance records yet.</p>
+                    </div>
+                    <div id="attendance-pagination" class="pagination-controls" aria-label="Attendance record pages"></div>
+                </section>
+            </div>
+        </section>
+    </div>
+    </div>
+</main>
+<script src="/app.js"></script>
+</body>
+</html>
